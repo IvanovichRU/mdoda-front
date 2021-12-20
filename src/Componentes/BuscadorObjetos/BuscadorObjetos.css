@@ -1,0 +1,10 @@
+.buscador-objetos-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+.buscador-objetos-lupa {
+    height: 2em;
+}

@@ -1,0 +1,7 @@
+.cuerpo-busqueda-contenedor {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2em;
+    background-color: var(--color-claro);
+}

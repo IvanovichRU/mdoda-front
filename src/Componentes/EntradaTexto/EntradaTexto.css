@@ -1,0 +1,51 @@
+.contenedor-entrada {
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.entrada-base {
+    background-color: var(--color-fondo);
+    outline: 0;
+    border: 0;
+    font-size: 1em;
+    color: var(--color-en-oscuro);
+    padding: 0.5em;
+    padding-bottom: 0.75em;
+    padding-top: 0.75em;
+    font-family: 'Oswald';
+    font-size: 1.2em;
+}
+
+.etiqueta {
+    color: gray;
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    position: absolute;
+    top: 0.9rem;
+    left: 0.6rem;
+    text-overflow: clip;
+    transition: 0.3s;
+    cursor: text;
+}
+
+.etiqueta-oculta {
+    color: transparent;
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.6rem;
+    text-overflow: clip;
+    transition: 0.3s;
+}
+
+.adorno {
+    height: 2px;
+    width: 0;
+    background-color: var(--color-alterno);
+}

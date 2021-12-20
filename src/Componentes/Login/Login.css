@@ -1,0 +1,45 @@
+h1 {
+    color: var(--color-en-oscuro);
+}
+
+.contenedor-login {
+    background-color: var(--color-base);
+    height: fit-content;
+    padding: 3em;
+    border-radius: 0.5em;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.titulo {
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.seccion-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-entregar {
+    width: fit-content;
+    align-self: flex-end;
+    border: 0;
+    outline: 0;
+    padding: 0.5em;
+    background-color: var(--color-alterno);
+    letter-spacing: 0.1em;
+    color: var(--color-en-oscuro);
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0.2em;
+}
+
+.entrada-texto {
+    width: 30em;
+}

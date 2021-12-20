@@ -1,0 +1,8 @@
+.cuerpo {
+    background-color: var(--color-claro);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

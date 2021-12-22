@@ -10,9 +10,10 @@ class PanelLateral extends React.Component {
         return (
             <div className="panel-lateral">
                 <h1 className="panel-lateral-usuario">{this.props.usuario}</h1>
-                <h2 className="panel-lateral-contenidos">Home</h2>
-                <h2 className="panel-lateral-contenidos">Perfil</h2>
-                <h2 className="panel-lateral-contenidos">Mis Objetos</h2>
+                <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("Perfil")}}>Perfil</h2>
+                <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("MisObjetos")}}>Mis Objetos</h2>
+                <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("Buscar")}}>Buscar</h2>
+                <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("Usuarios")}}>Usuarios</h2>
             </div>
         );
     }

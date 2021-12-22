@@ -14,7 +14,12 @@ class App extends React.Component {
     super(props);
     this.validarInicioSesion = this.validarInicioSesion.bind(this);
     this.state = {
-      usuario: null
+      usuario:{
+        nombre:"Aldha",
+        apellidos:"piolin",
+        email:"piolin@itsx.tuputamadre.com",
+        tipo:"administrador"
+       }
     }
   }
 
@@ -35,14 +40,17 @@ class App extends React.Component {
   }
 
   renderizarPanel() {
-    if (this.state.usuario) {
-      if (this.state.usuario.tipo == 'administrador') {
-        return <PanelAdministrador usuario={this.state.usuario} />;
-      }
-    }
-    else {
-      return <Login onSubmit={this.validarInicioSesion}/>
-    }
+     return (
+        <PanelAdministrador usuario={this.state.usuario}/>      
+     )
+    // if (this.state.usuario) {
+    //   if (this.state.usuario.tipo == 'administrador') {
+    //     return <PanelAdministrador usuario={this.state.usuario} />;
+    //   }
+    // }
+    // else {
+    //   return <Login onSubmit={this.validarInicioSesion}/>
+    // }
   }
 
   render() {

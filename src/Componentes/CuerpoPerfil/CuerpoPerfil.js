@@ -1,6 +1,7 @@
 import React from "react"
 import CuerpoAgregarObjeto from "../CuerpoAgregarObjeto/CuerpoAgregarObjeto";
 import "./CuerpoPerfil.css"
+import { CookiesProvider } from 'react-cookie';
 
 class CuerpoPerfil extends React.Component {
     constructor(props) {
@@ -12,7 +13,9 @@ class CuerpoPerfil extends React.Component {
             // <div className="cuerpo-perfil">
             //     <div className="perfil"> Mi perfil </div>
             // </div>
-            <CuerpoAgregarObjeto />
+            <CookiesProvider>
+                <CuerpoAgregarObjeto />
+            </CookiesProvider>
         )
     }
 }

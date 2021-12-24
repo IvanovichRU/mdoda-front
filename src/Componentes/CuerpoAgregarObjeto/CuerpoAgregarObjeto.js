@@ -28,16 +28,17 @@ class CuerpoAgregarObjeto extends React.Component {
             temas: this.sacarTemas.current.state.chips,
             materiales: this.materiales
         }
+        console.log(this.props)
         axios.post("http://localhost:8000/manejador/registrar_objeto",
             datosParaBackend,
             {
             headers: {'X-CSRFToken': this.props.cookies.get('csrftoken')},
             withCredentials: true
             }
-        ).then((respuesta) => {
-            alert("Exito");
-        }).catch((razon)=>{
+        ).catch((razon)=>{
             alert("error")
+        }).then((respuesta) => {
+            alert("Exito");
         })
     }
 

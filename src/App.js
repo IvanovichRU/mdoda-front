@@ -18,7 +18,7 @@ class App extends React.Component {
         nombre:"Aldha",
         apellidos:"piolin",
         email:"piolin@itsx.tuputamadre.com",
-        tipo:"administrador"
+        tipo:"maestro"
        }
     }
   }
@@ -41,16 +41,8 @@ class App extends React.Component {
 
   renderizarPanel() {
      return (
-        <PanelAdministrador usuario={this.state.usuario}/>      
+        <PanelAdministrador usuario={this.state.usuario}/>
      )
-    // if (this.state.usuario) {
-    //   if (this.state.usuario.tipo == 'administrador') {
-    //     return <PanelAdministrador usuario={this.state.usuario} />;
-    //   }
-    // }
-    // else {
-    //   return <Login onSubmit={this.validarInicioSesion}/>
-    // }
   }
 
   render() {

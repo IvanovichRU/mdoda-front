@@ -3,8 +3,39 @@
     align-items: center;
     gap: 1em;
     width: 100%;
+    height: 100%;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #F4AE3F;
 }
 
 .buscador-objetos-lupa {
     height: 2em;
 }
+
+.boton-agregar{
+    width: 20%;
+    height: 60px;
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #F4AE3F;
+    font-family: Oswald;
+    font-weight: 600;
+}
+
+.texto-agregar-boton{
+    margin: auto;
+    width: 60%;
+}
+
+@keyframes flotar-desde-abajo {
+    0% { transform: translateY(20%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.animacion-flotar-abajo{
+    animation: flotar-desde-abajo ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+

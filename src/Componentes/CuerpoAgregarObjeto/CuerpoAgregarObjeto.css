@@ -1,0 +1,107 @@
+.cuerpo-agregar-objeto{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-modulos-datos{
+    width: 95%;
+    height: 80%;
+    display: flex;
+    margin: 1em auto 0 auto;
+}
+.titulo-agregar-objeto{
+    color: black;
+    font-family: 'Oswald';
+    width: 40%;
+    margin: auto 0 auto 1em;
+}
+.contenedor-datos-generales{
+    width: 70%;
+    height: 100%;
+}
+.contenedor-materiales-temas{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-temas-objetos{
+    width: 100%;
+    height: 50%;
+}
+.contenedor-materiales-objetos{
+    width: 100%;
+    height: 50%;
+}
+.titulos-objetos{
+    border-bottom: 2.5px solid #F4AE3F;
+    padding-bottom: .1em;
+    font-family: 'Oswald';
+    font-weight: 300;
+    margin: 0 0 0 .5em;
+    width: 90%;
+}
+.objeto-aprendizaje{
+    margin-top: .5em;
+    margin-left: .5em;
+    margin-bottom: 0;
+    width: fit-content;
+    font-family: 'Oswald';
+}
+.input-aprendizaje{
+    margin-left: .5em;
+    width: 85%;
+    font-family: 'Oswald';
+    font-weight: 400;
+    border: 1px solid black;
+    border-radius: 5px;
+    resize: none;
+
+}
+.descripcion-objeto-aprendizaje{
+    margin-top: .5em;
+    margin-left: .5em;
+    margin-bottom: 0;
+    width: fit-content;
+    font-family: 'Oswald';
+}
+.input-descripcion-aprendizaje{
+    margin-left: .5em;
+    width: 85%;
+    height: 20%;
+    font-family: 'Oswald';
+    font-weight: 400;
+    border: 1px solid black;
+    border-radius: 5px;
+    resize: none;
+}
+.contenedor-chips{
+    width: 90%;
+    height: 80%;
+    margin-left: .5em;
+}
+.chips-objetos{
+    margin: 1em 0 0 1.4em;
+    width: 85%;
+}
+.contenedor-titulo-boton{
+    display: flex;
+    border-bottom: 3px solid #F4AE3F;
+    width: 95%;
+    margin: 1.2em auto 0 auto;
+    padding-bottom: .5em;
+}
+.contenedor-fuente-tipo{
+    margin-top: 1em;
+    margin-left: 1.2em;
+}
+.boton-agregar-material{
+    font-family: 'Oswald';
+    font-weight: 400;
+    border-radius: 5px;
+    margin-top: 4%;
+    margin-left: 32%;
+    width: 25%;
+    height: 35px;
+    background-color: #F4AE3F;
+    border: 0;
+}

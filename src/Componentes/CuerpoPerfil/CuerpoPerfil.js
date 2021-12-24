@@ -1,4 +1,5 @@
 import React from "react"
+import CuerpoAgregarObjeto from "../CuerpoAgregarObjeto/CuerpoAgregarObjeto";
 import "./CuerpoPerfil.css"
 
 class CuerpoPerfil extends React.Component {
@@ -8,9 +9,10 @@ class CuerpoPerfil extends React.Component {
 
     render() {
         return (
-            <div className="cuerpo-perfil">
-                <div className="perfil"> Mi perfil </div>
-            </div>
+            // <div className="cuerpo-perfil">
+            //     <div className="perfil"> Mi perfil </div>
+            // </div>
+            <CuerpoAgregarObjeto />
         )
     }
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import "./CuerpoUsuarios.css"
 import BuscadorUsuarios from "../BuscadorUsuarios/BuscadorUsuarios"
+import TablaObjetos from "../TablaObjetos/TablaObjetos";
 
 class CuerpoUsuarios extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class CuerpoUsuarios extends React.Component {
         return (
             <div className="cuerpo-usuarios">
                 <BuscadorUsuarios />
+                <TablaObjetos encabezados={["Usuario", "Objetos de aprendizaje", "Rol"]} />
             </div>
         )
     }

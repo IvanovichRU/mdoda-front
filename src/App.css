@@ -7,13 +7,13 @@
 }
 
 :root {
-  --color-fondo: #00243B;
+  --color-fondo: #213058;
   --color-base: #2A4673;
-  --color-alterno: #D1BC4A;
+  --color-alterno: #F4AE3F;
   --color-alterno-suave: rgba(209, 188, 74, 0.4);
   --color-enfasis: #B9314F;
-  --color-claro: #E1DEE3;
-  --color-en-oscuro: #FAFAFA;
+  --color-claro: #F0E6D7;
+  --color-en-oscuro: #F0E6D7;
   --color-en-claro: #0F0F0F;
 }
 

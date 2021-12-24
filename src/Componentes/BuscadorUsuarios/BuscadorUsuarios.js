@@ -11,7 +11,7 @@ class BuscadorUsuarios extends React.Component {
 
     render() {
         return (
-            <div className="buscador-objetos-contenedor">
+            <div className="buscador-objetos-contenedor animacion-flotar-abajo">
                 <EntradaTexto label="Buscar usuarios..." width={'80em'} />
                 <img src={iconoBuscar} className="buscador-objetos-lupa" />
             </div>

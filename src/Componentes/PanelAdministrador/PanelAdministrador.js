@@ -12,7 +12,7 @@ class PanelAdministrador extends React.Component {
         super(props);
         this.state = {
             usuario: this.props.usuario,
-            pantalla:"Usuarios"
+            pantalla:"Perfil"
         }
         this.cargarPantalla = this.cargarPantalla.bind(this);
         this.cambiarPantalla = this.cambiarPantalla.bind(this);
@@ -20,16 +20,16 @@ class PanelAdministrador extends React.Component {
 
     cargarPantalla(){
         if(this.state.pantalla === "Buscar"){
-            return <CuerpoBusqueda />;
+            return <CuerpoBusqueda usuario={this.props.usuario} />;
         }
         else if(this.state.pantalla === "Perfil"){
-            return <CuerpoPerfil />;
+            return <CuerpoPerfil usuario={this.state.usuario} />;
         }
         else if(this.state.pantalla === "MisObjetos"){
-            return <CuerpoMisObjetos />;
+            return <CuerpoMisObjetos usuario={this.state.usuario} />;
         }
         else if(this.state.pantalla === "Usuarios"){
-            return <CuerpoUsuarios />;
+            return <CuerpoUsuarios usuario={this.state.usuario} />;
         }
         else {
             return <h1>Error</h1>;
@@ -42,7 +42,7 @@ class PanelAdministrador extends React.Component {
     render() {
         return (
             <div className="panelUsuario">
-                <PanelLateral usuario={this.state.usuario.nombre} pantalla={this.cambiarPantalla} />
+                <PanelLateral usuario={this.state.usuario} pantalla={this.cambiarPantalla} />
                 {this.cargarPantalla()}
             </div>
         )

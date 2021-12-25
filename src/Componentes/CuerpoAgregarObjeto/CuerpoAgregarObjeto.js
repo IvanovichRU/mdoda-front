@@ -28,7 +28,21 @@ class CuerpoAgregarObjeto extends React.Component {
             temas: this.sacarTemas.current.state.chips,
             materiales: this.materiales
         }
-        console.log(this.props)
+        const valores = Object.values(datosParaBackend);
+        for (const valor of valores) {
+            if (typeof valor === 'string') {
+                if (valor === "") {
+                    alert("Completa los campos");
+                    return;
+                }
+            }
+            else {
+                if (valor.length === 0) {
+                    alert("Completa los campos");
+                    return;
+                }
+            }
+        }
         axios.post("http://localhost:8000/manejador/registrar_objeto",
             datosParaBackend,
             {
@@ -43,24 +57,30 @@ class CuerpoAgregarObjeto extends React.Component {
     }
 
     agregarMaterial(evento) {
-        let entradaTipo = document.getElementById('tipo-material');
-        let entradaFuente = document.getElementById('fuente-material');
+        const entradaTipo = document.getElementById('tipo-material');
+        const entradaFuente = document.getElementById('fuente-material');
+        
+        if(entradaTipo.value === "" || entradaFuente.value === ""){
+            alert("Completa los materiales");
+            return;
+        }
+
         this.materiales.push({
             tipo: entradaTipo.value,
             fuente: entradaFuente.value
         });
         entradaTipo.value = '';
         entradaFuente.value = '';
-        console.log(this.materiales);
         alert('Material agregado.');
     }
 
     render() {
         return (
-            <div className="cuerpo-agregar-objeto">
+            <div className="cuerpo-agregar-objeto animacion-flotar-abajo">
                 <div className="contenedor-titulo-boton">
-                <h2 className="titulo-agregar-objeto">Agregar Nuevo Objeto de Aprendizaje  </h2> 
-                <div onClick={this.guardarObjeto} className="boton-agregar"><p className="texto-agregar-boton">Guardar Objeto de Aprendizaje</p> <img src= {iconoAgregar} style={{"width":"15%","margin-right":"5%"}} /> </div>
+                    <h2 className="titulo-agregar-objeto">Agregar Nuevo Objeto de Aprendizaje  </h2>
+                    <div onClick={this.guardarObjeto} className="boton-agregar"><p className="texto-agregar-boton">Guardar Objeto de Aprendizaje</p> <img src={iconoAgregar} style={{ "width": "15%", "margin-right": "5%" }} /> </div>
+                    <div className="boton-cancelar" onClick={this.props.funcionCambiarPantalla} >Cancelar</div>
                 </div>
                 <div className="contenedor-modulos-datos">
                     <div className="contenedor-datos-generales">
@@ -103,6 +123,9 @@ class CuerpoAgregarObjeto extends React.Component {
                                 <p className="objeto-aprendizaje">Fuente:</p>
                                 <input id="fuente-material" className="input-aprendizaje" placeholder="Fuente"></input>
                                 <button onClick={this.agregarMaterial} className="boton-agregar-material"> Agregar Material </button>
+                            </div>
+                            <div className="contenedor-boton-subir">
+                                <button className="boton-subir">Subir</button>
                             </div>
                         </div>
                     </div>

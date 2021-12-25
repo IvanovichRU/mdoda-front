@@ -40,94 +40,28 @@ class TablaObjetos extends React.Component{
 
     }
     generarFilas(){
-        let objetos = [
-            {
-                nombre:"Computación en la nube",
-                desc:"Objeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nubeObjeto de aprendizaje con informacion sobre la computacion en la nube",
-                temas:"Computacion en la nube, Computacion, nube"
-            },
-            {
-                nombre:"Vision por computadora",
-                desc:"La inteligencia artificial en la vision por computadora",
-                temas:"Vision por computadora, vision, computadora"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            },
-            {
-                nombre:"Bucles en peython",
-                desc:"Bucles utilizados en el lenguaje de peython",
-                temas:"Bucles en peython, bucles, peython"
-            }
-        ];
         let filas = [];
-        
-        for(let objeto of objetos){
-            let columnas = [];
-            columnas.push(<div className="columnaN"> {objeto.nombre} </div>)
-            columnas.push(<div className="columnaD"> {objeto.desc} </div>)
-            columnas.push(<div className="columnaT"> {objeto.temas} </div>)
-            
-            if(this.props.botones){
-                filas.push(
-                    <div className="encabezado">
-                        {columnas}
-                        <div className="boton iconoE"> <img  src = {iconoEditar} style={{"width":"20px"}} /> </div>
-                        <div className="boton iconoD"> <img  src = {iconoEliminar} style={{"width":"17px", "margin-left":".1em"}} /> </div>
-                    </div>)
+        if (this.props.datos.objetos_encontrados) {
+            for(let objeto of this.props.datos.objetos_encontrados){
+                let columnas = [];
+                columnas.push(<div className="columnaN animacion-flotar-abajo"> {objeto.nombre} </div>)
+                columnas.push(<div className="columnaD animacion-flotar-abajo"> {objeto.descripcion} </div>)
+                columnas.push(<div className="columnaT animacion-flotar-abajo"> {objeto.temas.join(', ')} </div>)
+                
+                if(this.props.botones){
+                    filas.push(
+                        <div className="encabezado">
+                            {columnas}
+                            <div className="boton iconoE"> <img  src = {iconoEditar} style={{"width":"20px"}} /> </div>
+                            <div className="boton iconoD"> <img  src = {iconoEliminar} style={{"width":"17px", "margin-left":".1em"}} /> </div>
+                        </div>)
+                }
+                else {
+                    filas.push(
+                        <div className="encabezado"> {columnas} </div>)
+                }
+    
             }
-            else {
-                filas.push(
-                    <div className="encabezado"> {columnas} </div>)
-            }
-
         }
         return filas;
     }

@@ -16,16 +16,19 @@
     width: 20%;
     height: 60px;
     display: flex;
-    margin: auto;
+    margin: 0;
+    margin-left: 20%;
+    margin-right: 1%;
     border-radius: 10px;
     background-color: #F4AE3F;
     font-family: Oswald;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .texto-agregar-boton{
-    margin: auto;
-    width: 60%;
+    margin: auto auto auto 1em;
+    width: 80%;
 }
 
 @keyframes flotar-desde-abajo {

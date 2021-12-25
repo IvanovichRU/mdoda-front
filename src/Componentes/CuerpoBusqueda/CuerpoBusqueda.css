@@ -1,6 +1,5 @@
 .cuerpo-busqueda-contenedor {
     width: 100%;
-    height: auto;
     box-sizing: border-box;
     padding: 2em;
     background-color: var(--color-claro);

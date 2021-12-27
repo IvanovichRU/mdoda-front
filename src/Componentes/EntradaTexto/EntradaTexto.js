@@ -11,6 +11,7 @@ export default class EntradaTexto extends React.Component {
         this.enfocarEntrada = this.enfocarEntrada.bind(this);
         this.enfocar = this.enfocar.bind(this);
         this.desenfocar = this.desenfocar.bind(this);
+        this.onKeyPress = this.onKeyPress.bind(this);
 
         this.adorno = React.createRef();
         this.contenedor = React.createRef();
@@ -64,11 +65,16 @@ export default class EntradaTexto extends React.Component {
         this.contenedor.current.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0)';
     }
 
+    onKeyPress(evento) {
+        if (evento.key == 'Enter' && this.props.funcionBuscar)
+            this.props.funcionBuscar();
+    }
+
     render() {
         return (
             <div className="contenedor-entrada" ref={this.contenedor}>
                 <label className="etiqueta" ref={this.etiqueta} htmlFor={this.props.name} onClick={this.enfocarEntrada}>{this.props.label}</label>
-                <input ref={this.entrada} name={this.props.name} className="entrada-base" onFocus={this.enfocar} onBlur={this.desenfocar} type={this.props.type} onChange={this.props.onChange} />
+                <input ref={this.entrada} name={this.props.name} className="entrada-base" onFocus={this.enfocar} onBlur={this.desenfocar} type={this.props.type} onChange={this.props.onChange} onKeyPress={this.onKeyPress} />
                 <div className="adorno" ref={this.adorno}></div>
             </div>
         );

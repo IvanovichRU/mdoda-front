@@ -68,7 +68,7 @@ class TablaObjetos extends React.Component{
 
     render(){
         return (
-            <div className = "tabla-objetos animacion-flotar-abajo">
+            <div className = {"tabla-objetos animacion-flotar-abajo"}>
                 {this.generarEncabezado()}
                 {this.generarFilas()}
             </div>

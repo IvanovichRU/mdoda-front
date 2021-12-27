@@ -2,7 +2,6 @@ import React from "react";
 import './BuscadorObjetos.css';
 import iconoBuscar from './../../buscar.svg';
 import iconoAgregar from './../../Iconos/Agregar.svg';
-import axios from 'axios';
 import { CookiesProvider } from "react-cookie";
 import EntradaTexto from './../EntradaTexto/EntradaTexto'
 import CuerpoAgregarObjeto from "../CuerpoAgregarObjeto/CuerpoAgregarObjeto";
@@ -31,7 +30,7 @@ class BuscadorObjetos extends React.Component {
     render() {
         return (
             <div className="buscador-objetos-contenedor animacion-flotar-abajo">
-                <EntradaTexto ref={this.busqueda} label="Buscar objetos..." width={'80em'} />
+                <EntradaTexto funcionBuscar={() => {this.props.funcionCargarFilas(this.busqueda.current.entrada.current.value)}} ref={this.busqueda} label="Buscar objetos..." width={'80em'} />
                 <img src={iconoBuscar} className="buscador-objetos-lupa" onClick={() => {this.props.funcionCargarFilas(this.busqueda.current.entrada.current.value)}}  />
                 {this.renderizarBoton()}
             </div>

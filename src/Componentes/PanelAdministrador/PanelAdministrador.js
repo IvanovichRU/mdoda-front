@@ -23,7 +23,7 @@ class PanelAdministrador extends React.Component {
             return <CuerpoBusqueda usuario={this.props.usuario} />;
         }
         else if(this.state.pantalla === "Perfil"){
-            return <CuerpoPerfil usuario={this.state.usuario} />;
+            return <CuerpoPerfil funcion={this.cambiarPantalla} usuario={this.state.usuario} />;
         }
         else if(this.state.pantalla === "MisObjetos"){
             return <CuerpoMisObjetos usuario={this.state.usuario} />;

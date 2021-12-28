@@ -7,7 +7,7 @@ class FormularioLogin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            correoElectronico: "",
+            email: "",
             contraseña: "",
         };
 
@@ -26,7 +26,6 @@ class FormularioLogin extends React.Component {
     }
 
     manejarSubmit(evento) {
-        this.props.onSubmit(this.state);
         evento.preventDefault();
     }
 
@@ -34,12 +33,12 @@ class FormularioLogin extends React.Component {
         return (
             <form onSubmit={this.manejarSubmit} className="formulario-login">
                 <div className="seccion-formulario">
-                    <EntradaTexto name="correoElectronico" label="Correo electrónico" onChange={this.manejarCambios} type="email" width={'20em'} />
+                    <EntradaTexto name="email" label="Correo electrónico" onChange={this.manejarCambios} type="email" width={'20em'} />
                 </div>
                 <div className="seccion-formulario">
                     <EntradaTexto name="contraseña" label="Contraseña" onChange={this.manejarCambios} type="password" width={'20em'} />
                 </div>
-                <button className="boton-entregar" type="submit">INICIAR</button>
+                <button className="boton-entregar" onClick={() => this.props.alEntregar({email:this.state.email, contraseña:this.state.contraseña})} >INICIAR</button>
             </form>
         );
     }

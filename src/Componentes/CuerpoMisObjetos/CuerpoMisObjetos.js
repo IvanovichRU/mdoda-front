@@ -35,7 +35,7 @@ class CuerpoMisObjetos extends React.Component {
             return (
             <div className="cuerpo-mis-objetos">
                 <BuscadorObjetos funcionCargarFilas={this.cargarFilas} funcionCambiarPantalla={this.cambiarPantalla} usuario={this.props.usuario} />
-                <TablaObjetos datos={this.state.objetos}  encabezados={["Nombre del Objeto de Aprendizaje", "Descripción", "PITOS"]} botones />
+                <TablaObjetos datos={this.state.objetos}  encabezados={["Nombre del Objeto de Aprendizaje", "Descripción", "Temas"]} botones />
             </div>
             )
         }

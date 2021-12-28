@@ -90,6 +90,7 @@
     width: 95%;
     margin: 1.2em auto 0 auto;
     padding-bottom: .5em;
+    gap: 1em;
 }
 .contenedor-fuente-tipo{
     margin-top: 1em;

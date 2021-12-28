@@ -7,7 +7,7 @@ class PanelLateral extends React.Component {
     }
 
     renderizarPestañas() {
-        if (this.props.usuario.tipo === 'administrador') {
+        if (this.props.usuario.tipo === 'Administrador') {
             return (
                 <div className="panel-lateral">
                     <h1 className="panel-lateral-usuario">{this.props.usuario.nombre}</h1>
@@ -18,7 +18,7 @@ class PanelLateral extends React.Component {
                 </div>
             );
         }
-        if (this.props.usuario.tipo === 'maestro') {
+        if (this.props.usuario.tipo === 'Maestro') {
             return (
                 <div className="panel-lateral">
                     <h1 className="panel-lateral-usuario">{this.props.usuario.nombre}</h1>

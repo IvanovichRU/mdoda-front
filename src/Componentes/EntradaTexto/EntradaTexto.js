@@ -72,7 +72,7 @@ export default class EntradaTexto extends React.Component {
 
     render() {
         return (
-            <div className="contenedor-entrada" ref={this.contenedor}>
+            <div className="contenedor-entrada" ref={this.contenedor} style={{width:this.props.width}} >
                 <label className="etiqueta" ref={this.etiqueta} htmlFor={this.props.name} onClick={this.enfocarEntrada}>{this.props.label}</label>
                 <input ref={this.entrada} name={this.props.name} className="entrada-base" onFocus={this.enfocar} onBlur={this.desenfocar} type={this.props.type} onChange={this.props.onChange} onKeyPress={this.onKeyPress} />
                 <div className="adorno" ref={this.adorno}></div>

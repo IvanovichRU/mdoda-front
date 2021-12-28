@@ -11,7 +11,7 @@ class Login extends React.Component {
         return (
             <div className="contenedor-login">
                 <h1 className="titulo">Login</h1>
-                <FormularioLogin onSubmit={this.props.onSubmit}/>
+                <FormularioLogin alEntregar={this.props.alEntregar}/>
             </div>
         )
     }

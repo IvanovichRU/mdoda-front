@@ -15,7 +15,7 @@ class BuscadorObjetos extends React.Component {
     }
 
     renderizarBoton() {
-        if (this.props.usuario.tipo === 'administrador' || this.props.usuario.tipo === 'maestro') {
+        if (this.props.usuario.tipo === 'Administrador' || this.props.usuario.tipo === 'Maestro') {
             return <div onClick={this.props.funcionCambiarPantalla} className="boton-agregar"><p className="texto-agregar-boton">Agregar Objetos de Aprendizaje</p> <img src= {iconoAgregar} style={{"width":"15%","margin-right":"5%"}} /> </div>;
         }
         else {
@@ -30,7 +30,7 @@ class BuscadorObjetos extends React.Component {
     render() {
         return (
             <div className="buscador-objetos-contenedor animacion-flotar-abajo">
-                <EntradaTexto funcionBuscar={() => {this.props.funcionCargarFilas(this.busqueda.current.entrada.current.value)}} ref={this.busqueda} label="Buscar objetos..." width={'80em'} />
+                <EntradaTexto width={"25em"} funcionBuscar={() => {this.props.funcionCargarFilas(this.busqueda.current.entrada.current.value)}} ref={this.busqueda} label="Buscar objetos..." />
                 <img src={iconoBuscar} className="buscador-objetos-lupa" onClick={() => {this.props.funcionCargarFilas(this.busqueda.current.entrada.current.value)}}  />
                 {this.renderizarBoton()}
             </div>

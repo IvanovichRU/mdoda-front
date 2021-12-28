@@ -6,13 +6,16 @@ import TablaObjetos from "../TablaObjetos/TablaObjetos";
 class CuerpoUsuarios extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            usuarios: []
+        }
     }
 
     render() {
         return (
             <div className="cuerpo-usuarios">
                 <BuscadorUsuarios />
-                <TablaObjetos encabezados={["Usuario", "Objetos de aprendizaje", "Rol"]} />
+                <TablaObjetos datos={this.state.usuarios} encabezados={["Usuario", "Objetos de aprendizaje", "Rol"]} />
             </div>
         )
     }

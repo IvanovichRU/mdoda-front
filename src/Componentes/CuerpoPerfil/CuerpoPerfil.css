@@ -6,29 +6,71 @@
     background-color: var(--color-claro);
 }
 .contenedor-titulo-perfil-boton{
-    border: 1px solid black;
+    border-bottom: 3px solid #F4AE3F;
+    display: flex;
+    margin-top: .4em;
 }
 .titulo-perfil{
-    border: 1px solid black;
     width: 40%;
     font-family: 'Oswald';
     font-weight: 600;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: .6em;
+    margin-left: .5em;
 }
 .boton-editar{
     width: 10%;
     height: 50px;
-    margin: auto 0 auto 30%;
+    background-color: #BC4B51;
+    margin: 0 0 auto 27%;
+    color: black;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
 }
 .boton-cambiar-contraseña{
     width: 15%;
     height: 50px;
-    margin: auto 0 auto 2%;
+    background-color: #F4AE3F;
+    margin: 0 0 auto 2%;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
 }
 .contenedor-informacion-perfil{
-    border: 1px solid black;
     height: 80%;
     width: 80%;
-    margin: auto;
+    margin: 1em auto;
     display: flex;
     flex-direction: column;
+}
+.p-titulo{
+    margin-top: 1.2em;
+    font-family: 'Oswald';
+    font-weight: 600;
+    font-size: 21px;
+    width: 50%;
+}
+.p-contenido{
+    font-family: 'Oswald';
+    font-weight: 300;
+    font-size: 21px;
+    width: 50%;
+}
+.p-contenidoE{
+    font-family: 'Oswald';
+    font-weight: 300;
+    font-size: 21px;
+    margin-left: 1.2em;
+}
+.ver-objeto{
+    background-color: #F4AE3F;
+    border-radius: 6px;
+    font-size: 17px;
+    padding: .3em;
+    
+}
+.ver-objeto:hover{
+    cursor: pointer;
 }

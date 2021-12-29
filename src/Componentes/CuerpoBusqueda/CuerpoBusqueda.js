@@ -11,7 +11,8 @@ class CuerpoBusqueda extends React.Component {
         super(props);
         this.state = {
             objetos: [],
-            pantallaTabla: true
+            pantallaTabla: true,
+            usuario: this.props.usuario
         }
         this.cambiarPantalla = this.cambiarPantalla.bind(this);
         this.cargarFilas = this.cargarFilas.bind(this);
@@ -39,7 +40,7 @@ class CuerpoBusqueda extends React.Component {
             );
         }
         else{
-            return <CookiesProvider> <CuerpoAgregarObjeto funcionCambiarPantalla={this.cambiarPantalla} /> </CookiesProvider>;
+            return <CookiesProvider> <CuerpoAgregarObjeto usuario = {this.state.usuario} funcionCambiarPantalla={this.cambiarPantalla} /> </CookiesProvider>;
         }
     }
 

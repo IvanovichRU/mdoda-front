@@ -20,10 +20,10 @@ class PanelAdministrador extends React.Component {
 
     cargarPantalla(){
         if(this.state.pantalla === "Buscar"){
-            return <CuerpoBusqueda usuario={this.props.usuario} />;
+            return <CuerpoBusqueda usuario={this.state.usuario} />;
         }
         else if(this.state.pantalla === "Perfil"){
-            return <CuerpoPerfil funcion={this.cambiarPantalla} usuario={this.state.usuario} />;
+            return <CuerpoPerfil refrescarUsuario={this.props.refrescarUsuario} funcion={this.cambiarPantalla} usuario={this.state.usuario} />;
         }
         else if(this.state.pantalla === "MisObjetos"){
             return <CuerpoMisObjetos usuario={this.state.usuario} />;

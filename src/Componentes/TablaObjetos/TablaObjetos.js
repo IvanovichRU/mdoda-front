@@ -13,13 +13,13 @@ class TablaObjetos extends React.Component{
         let columna = 0;
         for (let encabezado of this.props.encabezados){
             if(columna === 0){
-                encabezados.push(<div className="encabezadoN"> {encabezado} </div>)
+                encabezados.push(<div key='e1' className="encabezadoN"> {encabezado} </div>)
             }
             else if(columna === 1){
-                encabezados.push(<div className="encabezadoD"> {encabezado} </div>)
+                encabezados.push(<div key='e2' className="encabezadoD"> {encabezado} </div>)
             }
             else {
-                encabezados.push(<div className="encabezadoT"> {encabezado} </div>)
+                encabezados.push(<div key='e3' className="encabezadoT"> {encabezado} </div>)
             }
             columna ++;
         }
@@ -44,13 +44,13 @@ class TablaObjetos extends React.Component{
         if (this.props.datos.objetos_encontrados) {
             for(let objeto of this.props.datos.objetos_encontrados){
                 let columnas = [];
-                columnas.push(<div className="columnaN animacion-flotar-abajo"> {objeto.nombre} </div>)
-                columnas.push(<div className="columnaD animacion-flotar-abajo"> {objeto.descripcion} </div>)
-                columnas.push(<div className="columnaT animacion-flotar-abajo"> {objeto.temas.join(', ')} </div>)
+                columnas.push(<div key='c1' className="columnaN animacion-flotar-abajo"> {objeto.nombre} </div>)
+                columnas.push(<div key='c2' className="columnaD animacion-flotar-abajo"> {objeto.descripcion} </div>)
+                columnas.push(<div key='c3' className="columnaT animacion-flotar-abajo"> {objeto.temas.join(', ')} </div>)
                 
                 if(this.props.botones){
                     filas.push(
-                        <div className="encabezado">
+                        <div key='c4' className="encabezado">
                             {columnas}
                             <div className="boton iconoE"> <img  src = {iconoEditar} style={{"width":"20px"}} /> </div>
                             <div className="boton iconoD"> <img  src = {iconoEliminar} style={{"width":"17px", "margin-left":".1em"}} /> </div>

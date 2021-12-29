@@ -9,6 +9,7 @@ class FormularioLogin extends React.Component {
         this.state = {
             email: "",
             contraseña: "",
+            recordar: false
         };
 
         this.manejarCambios = this.manejarCambios.bind(this);
@@ -38,7 +39,11 @@ class FormularioLogin extends React.Component {
                 <div className="seccion-formulario">
                     <EntradaTexto name="contraseña" label="Contraseña" onChange={this.manejarCambios} type="password" width={'20em'} />
                 </div>
-                <button className="boton-entregar" onClick={() => this.props.alEntregar({email:this.state.email, contraseña:this.state.contraseña})} >INICIAR</button>
+                <div className="recordar-login">
+                    <label htmlFor="input-recordarme" className="recordarme">Recordarme</label>
+                    <input onClick={() => this.state.recordar = !this.state.recordar} id="input-recordarme" type="checkbox" />
+                    <button className="boton-entregar" onClick={() => this.props.alEntregar({ email: this.state.email, contraseña: this.state.contraseña, recordar: this.state.recordar })} > INICIAR</button>
+                </div>
             </form>
         );
     }

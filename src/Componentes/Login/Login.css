@@ -28,7 +28,6 @@ h1 {
 
 .boton-entregar {
     width: fit-content;
-    align-self: flex-end;
     border: 0;
     outline: 0;
     padding: 0.5em;
@@ -42,4 +41,16 @@ h1 {
 
 .entrada-texto {
     width: 30em;
+}
+.recordar-login{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.recordarme{
+    font-family: 'Oswald';
+    color: white;
+}
+#input-recordarme{
+    margin-right: 2em;
 }

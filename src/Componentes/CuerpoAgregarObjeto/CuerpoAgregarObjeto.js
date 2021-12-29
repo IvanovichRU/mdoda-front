@@ -19,14 +19,15 @@ class CuerpoAgregarObjeto extends React.Component {
 
     guardarObjeto(evento) {
         const datosParaBackend = {
-            nombre_objeto: document.getElementById('nombre-objeto').value,
-            desc_objeto: document.getElementById('desc-objeto').value,
-            nivel_objeto: document.getElementById('nivel-objeto').value,
-            granularidad_objeto: document.getElementById('granularidad-objeto').value,
-            perfil_objeto: document.getElementById('perfil-objeto').value,
-            objetivo_objeto: document.getElementById('objetivo-objeto').value,
+            nombre: document.getElementById('nombre-objeto').value,
+            descripcion: document.getElementById('desc-objeto').value,
+            nivel: document.getElementById('nivel-objeto').value,
+            granularidad: document.getElementById('granularidad-objeto').value,
+            perfil: document.getElementById('perfil-objeto').value,
+            objetivo: document.getElementById('objetivo-objeto').value,
             temas: this.sacarTemas.current.state.chips,
-            materiales: this.materiales
+            materiales: this.materiales,
+            autor: this.props.usuario._id
         }
         const valores = Object.values(datosParaBackend);
         for (const valor of valores) {
@@ -79,7 +80,7 @@ class CuerpoAgregarObjeto extends React.Component {
             <div className="cuerpo-agregar-objeto animacion-flotar-abajo">
                 <div className="contenedor-titulo-boton">
                     <h2 className="titulo-agregar-objeto">Agregar Nuevo Objeto de Aprendizaje  </h2>
-                    <div onClick={this.guardarObjeto} className="boton-agregar"><p className="texto-agregar-boton">Guardar Objeto de Aprendizaje</p> <img src={iconoAgregar} style={{ "width": "15%", "margin-right": "5%" }} /> </div>
+                    <div onClick={this.guardarObjeto} className="boton-agregar"><p className="texto-agregar-boton">Guardar Objeto de Aprendizaje</p> <img src={iconoAgregar} style={{ "width": "15%", "marginRight": "5%" }} /> </div>
                     <div className="boton-cancelar" onClick={this.props.funcionCambiarPantalla} >Cancelar</div>
                 </div>
                 <div className="contenedor-modulos-datos">

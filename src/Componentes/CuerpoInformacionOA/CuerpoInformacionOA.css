@@ -1,0 +1,45 @@
+.contenedor-ioa{
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+.titulo-oa{
+    font-family: 'Oswald';
+    font-weight: 600;
+    font-size: 30px;
+}
+.contenedor-datos-oa{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: .5em;
+    font-family: 'Oswald';
+    font-weight: 300;
+}
+.datos-generales{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.contenedor-temas-materiales{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: .5em;
+}
+.body-temas, .body-materiales{
+    height: 50%;
+}
+
+.titulo-d{
+    font-family: 'Oswald';
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 1em;
+}
+.descripcion-oa{
+    width: 80%;
+    margin: 0;
+    text-align: justify;
+}

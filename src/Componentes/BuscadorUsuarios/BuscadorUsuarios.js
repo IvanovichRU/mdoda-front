@@ -15,7 +15,7 @@ class BuscadorUsuarios extends React.Component {
             <div className="buscador-objetos-contenedor animacion-flotar-abajo">
                 <EntradaTexto label="Buscar usuarios..." width={'25em'} />
                 <img src={iconoBuscar} className="buscador-objetos-lupa" />
-                <button className="boton-nuevo-usuario"> Nuevo Usuario</button>
+                <button onClick={() => this.props.cambiarPantalla()} className="boton-nuevo-usuario"> Nuevo Usuario</button>
             </div>
         )
     }

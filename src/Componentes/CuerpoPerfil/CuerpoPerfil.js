@@ -1,4 +1,6 @@
 import React from "react"
+import CuerpoInformacionOA from "../CuerpoInformacionOA/CuerpoInformacionOA";
+import CuerpoNuevoUsuario from "../CuerpoNuevoUsuario/CuerpoNuevoUsuario";
 import "./CuerpoPerfil.css"
 
 class CuerpoPerfil extends React.Component {

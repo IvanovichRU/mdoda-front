@@ -4,9 +4,6 @@ import './EntradaTexto.css';
 export default class EntradaTexto extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            valor: ''
-        };
 
         this.enfocarEntrada = this.enfocarEntrada.bind(this);
         this.enfocar = this.enfocar.bind(this);
@@ -25,7 +22,16 @@ export default class EntradaTexto extends React.Component {
 
     enfocar(evento) {
         if (this.entrada.current.value === '') {
-            this.etiqueta.current.className = 'etiqueta-oculta';
+            this.etiqueta.current.animate([
+                { transform: 'translateY(0)' },
+                { transform: 'translateY(-0.5em)', offset: 0.99, opacity: 0 },
+                { zIndex: '-1' }
+            ], {
+                duration: 300,
+                iterations: 1,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+            });
             this.adorno.current.style.alignSelf = 'flex-start';
             this.adorno.current.animate([
                 { width: '0' },
@@ -42,7 +48,15 @@ export default class EntradaTexto extends React.Component {
 
     desenfocar(evento) {
         if (this.entrada.current.value === '') {
-            this.etiqueta.current.className = 'etiqueta';
+            this.etiqueta.current.animate([
+                { transform: 'translateY(0.5em)', opacity: 0},
+                { transform: 'translateY(0)', opacity: 1, zIndex: '1' }
+            ], {
+                duration: 300,
+                iterations: 1,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+            });
             this.adorno.current.style.alignSelf = 'flex-end';
             this.adorno.current.animate([
                 { width: '100%' },

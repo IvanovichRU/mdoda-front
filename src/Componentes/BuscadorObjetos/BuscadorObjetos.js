@@ -16,7 +16,7 @@ class BuscadorObjetos extends React.Component {
 
     renderizarBoton() {
         if (this.props.usuario.tipo === 'Administrador' || this.props.usuario.tipo === 'Maestro') {
-            return <div onClick={this.props.funcionCambiarPantalla} className="boton-agregar"><p className="texto-agregar-boton">Agregar Objetos de Aprendizaje</p> <img src= {iconoAgregar} style={{"width":"15%","marginRight":"5%"}} /> </div>;
+            return <div onClick={this.props.funcionCambiarPantalla} className="boton-agregar">{window.innerWidth > 768 ? <p className="texto-agregar-boton">Agregar Objetos de Aprendizaje</p> : null} <img src= {iconoAgregar} height={'30px'} /> </div>;
         }
         else {
             return;

@@ -9,11 +9,12 @@
 :root {
   --color-fondo: #213058;
   --color-base: #2A4673;
-  --color-alterno: #F4AE3F;
+  --color-alterno: #FFDE00;
+  --color-alterno2: #F4AE3F;
   --color-alterno-suave: rgba(209, 188, 74, 0.4);
   --color-enfasis: #B9314F;
-  --color-claro: #F0E6D7;
-  --color-en-oscuro: #F0E6D7;
+  --color-claro: #f4f8fc;
+  --color-en-oscuro: #f4f8fc;
   --color-en-claro: #0F0F0F;
 }
 

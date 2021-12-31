@@ -34,17 +34,6 @@
     cursor: text;
 }
 
-.etiqueta-oculta {
-    color: transparent;
-    font-family: 'Oswald';
-    font-size: 1.2em;
-    position: absolute;
-    top: 0.4rem;
-    left: 0.6rem;
-    text-overflow: clip;
-    transition: 0.3s;
-}
-
 .adorno {
     height: 2px;
     width: 0;

@@ -1,53 +1,63 @@
 .tabla-objetos{
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    width: 100%;
+    flex-direction: column;
     margin-top: 1.5em;
-    font-family: Oswald;
-    color: #213058;
+    font-family: 'Oswald';
+    color: white;
 }
 .encabezado{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: solid 2px var(--color-alterno);
+    background-color: var(--color-fondo);
+    flex: 1 1 0;
+    color: white;
 }
-.encabezadoN{
-    border: 3px solid #F4AE3F;
-    width: 25%;
-    border-right: 0px;
-    padding: .5em;
+
+.fila {
+    display: flex;
+    color: black;
+    height: 3em;
 }
-.encabezadoD{
-    border: 3px solid #F4AE3F;
-    border-right: 0px;
-    width: 45%;
-    padding: .5em;
+
+.fila-datos {
+    display: flex;
+    color: black;
 }
-.encabezadoT{
-    border: 3px solid #F4AE3F;
-    width: 30%;
-    padding: .5em;
+.columna {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    box-sizing: border-box;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: sans-serif;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
-.columnaN{
-    width: 25%;
-    border: 3px solid #F4AE3F;
-    border-top: 0px;
-    border-right: 0px;
-    padding: .5em;
+
+.columna:hover {
+    cursor: pointer;
 }
-.columnaD{
-    width: 45%;
-    border: 3px solid #F4AE3F;
-    border-top: 0px;
-    border-right: 0px;
-    padding: .5em;
+
+.contenedor-temas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
 }
-.columnaT{
-    width: 30%;
-    border: 3px solid #F4AE3F;
-    border-top: 0px;
-    padding: .5em;
+
+.contenedor-temas span {
+    background-color: #FFD966;
+    border-radius: 0.5em;
+    padding: 0.5em;
 }
+
 .invisibles{
     opacity: 0;
 }
+
 .boton{
     margin: auto;
     background: none;
@@ -55,15 +65,27 @@
     padding: .5em;
     width: 25px ;
 }
+
 .iconoE{
-    background-color: #5B8E7D;
+    /* background-color: #5B8E7D; */
     height: 25px;
     margin-right: .2em;
     margin-left: .2em;
     border-radius: 10px;
+    filter: invert(50%) sepia(31%) saturate(395%) hue-rotate(109deg) brightness(95%) contrast(85%);
 }
+
+.iconoE:hover {
+    cursor: pointer;
+}
+
 .iconoD{
-    background-color: #BC4B51;
+    /* background-color: #BC4B51; */
     height: 25px;
     border-radius: 10px;
+    filter: invert(23%) sepia(47%) saturate(3138%) hue-rotate(324deg) brightness(95%) contrast(86%);
+}
+
+.iconoD:hover {
+    cursor: pointer;
 }

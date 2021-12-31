@@ -2,8 +2,7 @@
     margin: 0;
     display: flex;
     gap: 1em;
-    align-content: center;
-    box-sizing: border-box;
+    align-items: center;
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 0.5em;
@@ -11,11 +10,29 @@
     background-color: var(--color-base);
     color: var(--color-en-oscuro);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-    position: relative;
+    /* position: relative; */
     z-index: 1;
   }
   
+@media screen and (min-width: 768px) {
   .barra-titulo h1 {
     margin: 0;
     width: fit-content;
   }
+  
+  .barra-titulo img {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .barra-titulo h1 {
+    margin: 0;
+    width: fit-content;
+    font-size: 1em;
+  }
+
+  .barra-titulo img {
+    height: 2em;
+  }
+}

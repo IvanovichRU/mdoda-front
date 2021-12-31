@@ -10,11 +10,13 @@ class CuerpoAgregarObjeto extends React.Component {
     constructor(props) {
         super(props);
         this.materiales = [];
+
         this.sacarTemas = React.createRef();
 
         this.agregarMaterial = this.agregarMaterial.bind(this);
         this.guardarObjeto = this.guardarObjeto.bind(this);
-
+        this.subirZip = this.subirZip.bind(this);
+        this.zipASubir = React.createRef();
     }
 
     guardarObjeto(evento) {
@@ -75,6 +77,10 @@ class CuerpoAgregarObjeto extends React.Component {
         alert('Material agregado.');
     }
 
+    subirZip() {
+
+    }
+
     render() {
         return (
             <div className="cuerpo-agregar-objeto animacion-flotar-abajo">
@@ -126,6 +132,7 @@ class CuerpoAgregarObjeto extends React.Component {
                                 <button onClick={this.agregarMaterial} className="boton-agregar-material"> Agregar Material </button>
                             </div>
                             <div className="contenedor-boton-subir">
+                                <input type={'file'} ref={this.zipASubir} />
                                 <button className="boton-subir">Subir</button>
                             </div>
                         </div>

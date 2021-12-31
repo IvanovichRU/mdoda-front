@@ -12,21 +12,30 @@
 }
 
 .boton-agregar{
-    width: 20%;
-    height: 60px;
     display: flex;
-    margin: 0;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
     margin-left: auto;
-    border-radius: 10px;
+    border-radius: 0.5em;
     background-color: #F4AE3F;
-    font-family: Oswald;
+    font-family: 'Oswald';
     font-weight: 600;
+    font-size: 1.25em;
     cursor: pointer;
 }
 
-.texto-agregar-boton{
-    margin: auto auto auto 1em;
-    width: 80%;
+@media screen and (min-width: 768px) {
+    .texto-agregar-boton{
+        margin: 0;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .texto-agregar-boton{
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @keyframes flotar-desde-abajo {

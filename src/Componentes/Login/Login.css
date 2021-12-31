@@ -6,12 +6,19 @@ h1 {
     background-color: var(--color-base);
     height: fit-content;
     padding: 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
     border-radius: 0.5em;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
 }
 
 .titulo {
     margin: 0;
+    margin-right: auto;
     margin-bottom: 0.5em;
 }
 
@@ -31,12 +38,14 @@ h1 {
     border: 0;
     outline: 0;
     padding: 0.5em;
-    background-color: var(--color-alterno);
+    /* background-color: #FFD966; */
+    background-color: var(--color-fondo);
     letter-spacing: 0.1em;
     color: var(--color-en-oscuro);
     padding-left: 1em;
     padding-right: 1em;
     border-radius: 0.2em;
+    cursor: pointer;
 }
 
 .entrada-texto {
@@ -51,6 +60,26 @@ h1 {
     font-family: 'Oswald';
     color: white;
 }
+
+.texto-alumno {
+    color: var(--color-claro);
+    margin: 0;
+    font-weight: 200;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.texto-alumno:hover {
+    color: #FFD966;
+}
+
+.divisor {
+    width: 75%;
+    height: 2px;
+    background-color: var(--color-alterno);
+}
+
 #input-recordarme{
     margin-right: 2em;
 }

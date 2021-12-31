@@ -23,6 +23,7 @@ class PanelLateral extends React.Component {
         if (this.props.usuario.tipo === 'Maestro') {
             return (
                 <div className="panel-lateral">
+                    <img src={imagenUsuario} style={{width: '100px', borderRadius: '100%'}} />
                     <h1 className="panel-lateral-usuario">{this.props.usuario.nombre}</h1>
                     <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("Perfil")}}>Perfil</h2>
                     <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("MisObjetos")}}>Mis Objetos</h2>
@@ -32,8 +33,8 @@ class PanelLateral extends React.Component {
         }
         return (
             <div className="panel-lateral">
+                <img src={imagenUsuario} style={{width: '100px', borderRadius: '100%'}} />
                 <h1 className="panel-lateral-usuario">{this.props.usuario.nombre}</h1>
-                <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("Perfil")}}>Perfil</h2>
                 <h2 className="panel-lateral-contenidos" onClick={() => {this.props.pantalla("Buscar")}}>Buscar</h2>
             </div>
             );

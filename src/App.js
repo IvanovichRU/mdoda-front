@@ -3,17 +3,20 @@ import Cuerpo from './Componentes/Cuerpo/Cuerpo';
 import Login from './Componentes/Login/Login';
 import PanelAdministrador from './Componentes/PanelAdministrador/PanelAdministrador';
 import axios from "axios";
-import { withCookies, Cookies } from "react-cookie";
+import { withCookies } from "react-cookie";
 import './App.css';
 import React from 'react';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      usuario: null
+    }
+
     this.validarInicioSesion = this.validarInicioSesion.bind(this);
     this.refrescarUsuario = this.refrescarUsuario.bind(this);
-    this.cookies = new Cookies;
-    this.state = {}
+    this.iniciarSesionAlumno = this.iniciarSesionAlumno.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +37,15 @@ class App extends React.Component {
         }
       });
     }
+  }
+
+  iniciarSesionAlumno() {
+    this.setState({usuario: {
+      nombre: 'Alumno',
+      apellidos: 'Invitado',
+      email: '',
+      tipo: 'Alumno',
+    }});
   }
 
   validarInicioSesion(credenciales) {
@@ -59,7 +71,7 @@ class App extends React.Component {
   }
 
   refrescarUsuario() {
-    if (this.state.usuario) {
+    if (this.state.usuario && (this.state.usuario.tipo === 'Administrador' || this.state.usuario.tipo === 'Maestro')) {
       axios.get('http://localhost:8000/manejador/perfil', {
         params: {
           usuario_id: this.state.usuario._id,
@@ -67,7 +79,7 @@ class App extends React.Component {
         }
       }).then((respuesta) => {
         this.setState({ usuario: respuesta.data.usuario_actualizado });
-        console.log(this.state.usuario)
+        return this.state.usuario;
       }).catch((razon) => {
         alert(razon);
       });
@@ -76,15 +88,13 @@ class App extends React.Component {
 
   renderizarPanel() {
     if (this.state.usuario) {
-      if (this.state.usuario.tipo === "Administrador") {
-        return (
-          <PanelAdministrador usuario={this.state.usuario} refrescarUsuario={this.refrescarUsuario} />
-        )
-      }
+      return (
+        <PanelAdministrador usuario={this.state.usuario} refrescarUsuario={this.refrescarUsuario} />
+      );
     }
     else {
       return (
-        <Login alEntregar={this.validarInicioSesion} />
+        <Login alEntregar={this.validarInicioSesion} sesionAlumno={this.iniciarSesionAlumno} />
       )
     }
   }

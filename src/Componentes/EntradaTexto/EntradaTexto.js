@@ -1,9 +1,15 @@
 import React from "react";
 import './EntradaTexto.css';
+import iconoMostrar from '../../Iconos/mostrar.svg';
+import iconoOcultar from '../../Iconos/ocultar.svg';
 
 export default class EntradaTexto extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            mostrarContraseña: false,
+            tipoEntrada: null
+        }
 
         this.enfocarEntrada = this.enfocarEntrada.bind(this);
         this.enfocar = this.enfocar.bind(this);
@@ -14,6 +20,10 @@ export default class EntradaTexto extends React.Component {
         this.contenedor = React.createRef();
         this.etiqueta = React.createRef();
         this.entrada = React.createRef();
+    }
+
+    componentDidMount() {
+        this.setState({tipoEntrada: this.props.type});
     }
 
     enfocarEntrada(evento) {
@@ -79,6 +89,11 @@ export default class EntradaTexto extends React.Component {
         this.contenedor.current.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0)';
     }
 
+    mostrarOjo() {
+        let icono = this.state.mostrarContraseña ? iconoOcultar : iconoMostrar;
+        return <img className={this.state.mostrarContraseña ? 'filtro-mostrar' : 'filtro-ocultar'} style={{height: '2em', position: 'absolute', top: '0.9em', right: '0.5em'}} src={icono} onClick={() => this.setState({mostrarContraseña: !this.state.mostrarContraseña, tipoEntrada: this.state.mostrarContraseña ? 'password' : 'text'})} />;
+    }
+
     onKeyPress(evento) {
         if (evento.key == 'Enter' && this.props.funcionBuscar)
             this.props.funcionBuscar();
@@ -88,7 +103,8 @@ export default class EntradaTexto extends React.Component {
         return (
             <div className="contenedor-entrada" ref={this.contenedor} style={{width:this.props.width}} >
                 <label className="etiqueta" ref={this.etiqueta} htmlFor={this.props.name} onClick={this.enfocarEntrada}>{this.props.label}</label>
-                <input ref={this.entrada} name={this.props.name} className="entrada-base" onFocus={this.enfocar} onBlur={this.desenfocar} type={this.props.type} onChange={this.props.onChange} onKeyPress={this.onKeyPress} />
+                <input ref={this.entrada} name={this.props.name} className="entrada-base" onFocus={this.enfocar} onBlur={this.desenfocar} onChange={this.props.onChange} onKeyPress={this.onKeyPress} type={this.state.tipoEntrada} />
+                {this.props.type == 'password' ? this.mostrarOjo() : null}
                 <div className="adorno" ref={this.adorno}></div>
             </div>
         );

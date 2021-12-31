@@ -32,10 +32,19 @@
     text-overflow: clip;
     transition: 0.3s;
     cursor: text;
+    user-select: none;
 }
 
 .adorno {
     height: 2px;
     width: 0;
     background-color: var(--color-alterno);
+}
+
+.filtro-mostrar {
+    filter: invert(88%) sepia(21%) saturate(6659%) hue-rotate(360deg) brightness(110%) contrast(110%);
+}
+
+.filtro-ocultar {
+    filter: invert(1) brightness(10);
 }

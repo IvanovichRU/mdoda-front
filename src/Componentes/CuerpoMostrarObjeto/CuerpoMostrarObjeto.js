@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 
 class CuerpoMostrarObjeto extends React.Component {
@@ -6,6 +7,7 @@ class CuerpoMostrarObjeto extends React.Component {
         this.state = {
             objeto: null
         }
+        // this.descargarObjeto = this.descargarObjeto.bind(this);
     }
 
     componentDidMount() {
@@ -62,9 +64,24 @@ class CuerpoMostrarObjeto extends React.Component {
         return materiales;
     }
 
-    descargarObjeto() {
-        
-    }
+    // descargarObjeto() {
+    //     axios.get('http://localhost:8000/manejador/descargar_objeto', {
+    //         params: {_id: this.state.objeto._id}
+    //     }).then(respuesta => {
+    //         const url = window.URL.createObjectURL(new Blob([respuesta.data]));
+    //         const link = document.createElement('a');
+    //         link.href = url;
+    //         link.setAttribute(
+    //             'download',
+    //             'Objeto.zip'
+    //         );
+    //         document.body.appendChild(link);
+    //         link.click();
+    //         link.parentNode.removeChild(link);
+    //     }).catch(razon => {
+    //         alert(razon);
+    //     });
+    // }
 
     render() {
         if (this.state.objeto != null) {
@@ -112,7 +129,7 @@ class CuerpoMostrarObjeto extends React.Component {
                             </div>
                             <div className="contenedor-boton-subir">
                                 <button className="boton-cancelar" onClick={this.props.funcionCambiarPantalla} >ATRÁS</button>
-                                <button className="boton-subir" onClick={this.descargarObjeto}>DESCARGAR</button>
+                                <button className="boton-subir"><a style={{all: 'unset'}} href={"http://localhost:8000/manejador/descargar_objeto?_id=" + this.state.objeto._id}>DESCARGAR</a></button>
                             </div>
                         </div>
                     </div>

@@ -49,7 +49,7 @@ class App extends React.Component {
   }
 
   validarInicioSesion(credenciales) {
-    axios.post('http://localhost:8000/manejador/login', credenciales,
+    axios.post('http://localhost:8000/manejador/login/', credenciales,
       {
         headers: { 'X-CSRFToken': this.props.cookies.get('csrftoken') },
         withCredentials: true

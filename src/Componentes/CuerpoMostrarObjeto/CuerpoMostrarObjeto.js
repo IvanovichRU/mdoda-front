@@ -10,7 +10,7 @@ class CuerpoMostrarObjeto extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8000/manejador/arreglar_csrf')
+        axios.get('http://localhost:8000/manejador/arreglar_csrf/')
         .then((respuesta) => {alert('Exito')})
         .catch(razon => {alert(razon)});
         this.setState({ objeto: this.props.objeto });

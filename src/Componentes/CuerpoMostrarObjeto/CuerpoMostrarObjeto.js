@@ -7,10 +7,12 @@ class CuerpoMostrarObjeto extends React.Component {
         this.state = {
             objeto: null
         }
-        // this.descargarObjeto = this.descargarObjeto.bind(this);
     }
 
     componentDidMount() {
+        axios.get('http://localhost:8000/manejador/arreglar_csrf')
+        .then((respuesta) => {alert('Exito')})
+        .catch(razon => {alert(razon)});
         this.setState({ objeto: this.props.objeto });
     }
 
@@ -63,25 +65,6 @@ class CuerpoMostrarObjeto extends React.Component {
         }
         return materiales;
     }
-
-    // descargarObjeto() {
-    //     axios.get('http://localhost:8000/manejador/descargar_objeto', {
-    //         params: {_id: this.state.objeto._id}
-    //     }).then(respuesta => {
-    //         const url = window.URL.createObjectURL(new Blob([respuesta.data]));
-    //         const link = document.createElement('a');
-    //         link.href = url;
-    //         link.setAttribute(
-    //             'download',
-    //             'Objeto.zip'
-    //         );
-    //         document.body.appendChild(link);
-    //         link.click();
-    //         link.parentNode.removeChild(link);
-    //     }).catch(razon => {
-    //         alert(razon);
-    //     });
-    // }
 
     render() {
         if (this.state.objeto != null) {

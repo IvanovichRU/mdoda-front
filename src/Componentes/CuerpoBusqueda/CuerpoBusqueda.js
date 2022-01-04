@@ -5,6 +5,7 @@ import CuerpoAgregarObjeto from "../CuerpoAgregarObjeto/CuerpoAgregarObjeto";
 import BuscadorObjetos from "../BuscadorObjetos/BuscadorObjetos";
 import TablaObjetos from "../TablaObjetos/TablaObjetos";
 import axios from "axios";
+import CuerpoMostrarObjeto from "../CuerpoMostrarObjeto/CuerpoMostrarObjeto";
 
 class CuerpoBusqueda extends React.Component {
     constructor(props) {
@@ -12,14 +13,26 @@ class CuerpoBusqueda extends React.Component {
         this.state = {
             objetos: [],
             pantallaTabla: true,
-            usuario: this.props.usuario
+            usuario: this.props.usuario,
+            objetoSeleccionado: null
         }
         this.cambiarPantalla = this.cambiarPantalla.bind(this);
         this.cargarFilas = this.cargarFilas.bind(this);
+        this.seleccionarObjeto = this.seleccionarObjeto.bind(this);
     }
 
     cambiarPantalla() {
-        this.setState({pantallaTabla: !this.state.pantallaTabla})
+        this.setState({pantallaTabla: !this.state.pantallaTabla, objetoSeleccionado: null})
+    }
+
+    seleccionarObjeto(idObjeto) {
+        axios.get('http://localhost:8000/manejador/obtener_info_objeto', {
+            params: {_id: idObjeto}
+        }).then((respuesta) => {
+            this.setState({pantallaTabla: false, objetoSeleccionado: respuesta.data.Objeto});
+        }).catch(razon => {
+            alert(razon);
+        });
     }
 
     cargarFilas(cadena_busqueda) {
@@ -35,8 +48,13 @@ class CuerpoBusqueda extends React.Component {
             return (
                 <div className="cuerpo-busqueda-contenedor">
                     <BuscadorObjetos funcionCargarFilas={this.cargarFilas} funcionCambiarPantalla={this.cambiarPantalla} usuario={this.props.usuario} />
-                    <TablaObjetos datos={this.state.objetos} encabezados={["Nombre del Objeto de Aprendizaje", "Descripción", "Temas"]} />
+                    <TablaObjetos datos={this.state.objetos} funcionSeleccionar={this.seleccionarObjeto} encabezados={["Nombre del Objeto de Aprendizaje", "Descripción", "Temas"]} />
                 </div>
+            );
+        }
+        else if (this.state.pantallaTabla == false && this.state.objetoSeleccionado != null) {
+            return (
+                <CuerpoMostrarObjeto objeto={this.state.objetoSeleccionado} funcionCambiarPantalla={this.cambiarPantalla} />
             );
         }
         else{

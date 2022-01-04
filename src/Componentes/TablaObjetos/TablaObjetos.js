@@ -39,6 +39,7 @@ class TablaObjetos extends React.Component {
         }
 
     }
+
     generarFilas() {
         let filas = [];
         if (this.props.datos.objetos_encontrados) {
@@ -55,15 +56,15 @@ class TablaObjetos extends React.Component {
 
                 if (this.props.botones) {
                     filas.push(
-                        <div key={'c' + botonesCounter} className="fila-datos">
+                        <div onClick={() => this.props.funcionSeleccionar(objeto._id)} key={'c' + botonesCounter} className="fila-datos">
                             {columnas}
                             <div className="boton iconoE"> <img src={iconoEditar} style={{ "width": "20px" }} /> </div>
-                            <div className="boton iconoD"> <img src={iconoEliminar} style={{ "width": "17px", "margin-left": ".1em" }} /> </div>
+                            <div className="boton iconoD"> <img src={iconoEliminar} style={{ "width": "17px", "marginLeft": ".1em" }} /> </div>
                         </div>)
                 }
                 else {
                     filas.push(
-                        <div key='c5' className="fila-datos"> {columnas} </div>)
+                        <div onClick={() => this.props.funcionSeleccionar(objeto._id)} key='c5' className="fila-datos"> {columnas} </div>)
                 }
                 botonesCounter++;
             }

@@ -1,5 +1,4 @@
 import React from "react"
-// import "../BuscadorObjetos/BuscadorObjetos.css"
 import "../BuscadorUsuarios/BuscadorUsuarios.css"
 import iconoBuscar from './../../buscar.svg';
 

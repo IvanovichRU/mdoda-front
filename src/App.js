@@ -67,6 +67,8 @@ class App extends React.Component {
           alert(datos.Mensaje);
         }
 
+      }).catch(razon => {
+        alert(razon);
       });
   }
 
